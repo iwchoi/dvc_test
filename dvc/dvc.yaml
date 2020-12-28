@@ -1,0 +1,18 @@
+stages:
+ 
+  stage1 :
+    desc: stage1
+    cmd: cd ../code/ && python test1.py #--f_in ../data/in1.txt --f_out ../repro/out1.txt
+    deps:
+      -  ../data/in1.txt
+    outs:
+      - ../repro/out1.txt  
+
+  stage2 :
+    desc: stage2
+    cmd: cd ../code/ && python test2.py #--f_in ../repro/out1.txt --f_out ../repro/out2.txt
+    deps:
+      -  ../repro/out1.txt
+    outs:
+      - ../repro/out2.txt  
+

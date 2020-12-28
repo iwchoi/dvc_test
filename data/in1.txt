@@ -1,0 +1,2 @@
+This is a dvc test
+It is an original input file named by 'in1.txt'

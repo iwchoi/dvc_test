@@ -1,0 +1,20 @@
+stage1:
+  cmd: cd ../code/ && python test1.py
+  deps:
+  - path: ../data/in1.txt
+    md5: 2f36e2453e96030ee12a45d2ae910341
+    size: 66
+  outs:
+  - path: ../repro/out1.txt
+    md5: 03779dd3f9b7f45fb872c09387fda4ce
+    size: 88
+stage2:
+  cmd: cd ../code/ && python test2.py
+  deps:
+  - path: ../repro/out1.txt
+    md5: 03779dd3f9b7f45fb872c09387fda4ce
+    size: 88
+  outs:
+  - path: ../repro/out2.txt
+    md5: 27aac9d5c409c372b78eb4f165887bcd
+    size: 110
